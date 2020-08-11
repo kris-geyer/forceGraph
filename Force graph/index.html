@@ -1,0 +1,99 @@
+
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Force graph</title>
+  <script src="https://cdn.jsdelivr.net/npm/json2csv"></script>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="saveSvgAsPng.js"></script>
+  <script src="main.js"></script>
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+  <h1>Force graph</h1>
+  <meta charset="utf-8">
+
+  <div id="inst">
+  <p>This application is designed to help you create a visual network of people you know and enable you to provide information about the relationships between these people.<br>
+    <br>Please use the instructions below to help you customize your visual network.
+  </p>
+  <p>
+  When you have finished creating your visual network click the <b>Finished</b> button below.
+  </p>
+  </div>
+
+<div id="myModal" class="modal">
+
+  <div class="modal-content">
+    <span id="modalClose">&times;</span>
+    <p>
+    <h3>HOW TO USE THE PROGRAMME TO CREATE YOUR VISUAL NETWORK</h3>
+      <div id=instruction>
+        <h4>People in the network</h4>
+        <ul>
+          <li>
+          Click anywhere within the outlined space on your screen to add a ‘node’.  This node represents a new person in your network. When prompted, type in a name (note: you cannot use the same name twice).
+          </li>
+        </ul>
+        <h4>Showing Relationships between People</h4>
+        <ul>
+          <li>
+          Click on a node and drag it with the mouse to another node in order to add a link between the nodes (i.e. a link between people). This link visually represents the relationship between the two people.
+          </li>
+          <li>
+          If you would like to delete a node or link, double-click on it.
+          </li>
+        </ul>
+        <h4>Showing Importance or Significance</h4>
+        <ul>
+          <li>
+          You can change or customize the size of the nodes to show how important or central a node (person) is in the network. To change the size of a node, click on the node and press the <b>Up</b> and <b>Down</b> keys on the keyboard. Pressing <b>Up</b> will make the node bigger (i.e. this will show that the person that node represents is more important). Pressing <b>Down</b> will make the node smaller (and can be used to show that a person is less important in the visual network).
+          </li>
+        </ul>
+        <h4>Showing Closeness and Strength of Relationships</h4>
+        <ul>
+          <li>
+          You can customize the width of the links to indicate the strength of a relationship. This will enable you to show where there are strong and weak relationships between people in the network.  Wide links represent strong relationships and narrow links represent weaker relationships. Press the <b>Left arrow</b> key on the keyboard to make a link weaker (a narrow line) or the <b>right arrow</b> key to make a link stronger (a wider line).
+          </li>
+          <li>
+          You can also modify the length of the links to indicate the proximity of a relationship (near or distant).  Shorter lines between nodes represent close relationships while longer lines represent more distant relationships. Press the <b>Down arrow</b> key on the keyboard to reduce the distance between nodes or press the <b>Up arrow</b> key to extend the distance between nodes.
+          </li>
+        </ul>
+        <h4>Showing Importance or Significance</h4>
+        <ul>
+          <li>
+          You can customize the links to show how relationships work in terms of either the flow of information between two people in the network or the direction of the relationship (one direction or mutual). To customise the relationship between two nodes, click on the link between them. This will toggle the link between the possible relationships, creating an arrow in the link that can be used to show the flow of information or the direction of a relationship between two nodes. You can choose whether there should be one arrow on the link pointing towards either of the two nodes (reflecting a one-directional relationship) or two arrows on the link (reflecting a mutual relationship).
+          </li>
+        </ul>
+
+        <ul>
+      <li>When you are done creating your network of nodes click the <b>Finished</b> button below.</li>
+    </ul>
+      <p>We would like to extend our thanks to d3.js: https://d3js.org/ and the develepers of saveSvgAsPng: https://github.com/exupero/saveSvgAsPng.</p>
+      <br/>
+
+    </ul>
+  </div>
+  </div>
+
+</div>
+
+
+
+<div id="container">
+	<div>  <button id="callInst">Click for instructions</button> </div>
+	<div>
+    <p id="smrtCapable">Enable smartphone capabilities</p>
+    <label class="switch nonSVGinput">
+    <input name="checkbox" type="checkbox">
+    <span class="slider round " id="smrtCapable"></span>
+
+  </div>
+	<div><button type="button" name="button" onclick="exportData()">Export</button></div>
+  <div id="forSVG"></div>
+</div>
+
+</body>
+</div>
